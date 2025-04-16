@@ -1,0 +1,6 @@
+@SoftableDrive_HostAddress = http://localhost:5194
+
+GET {{SoftableDrive_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
