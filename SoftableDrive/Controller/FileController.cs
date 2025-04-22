@@ -6,7 +6,7 @@ using SoftableDrive.Models;
 namespace SoftableDrive.Controller;
 
 [ApiController]
-[Route("[controller]")]
+[Route("files")]
 
 public class FileController : ControllerBase
 {
