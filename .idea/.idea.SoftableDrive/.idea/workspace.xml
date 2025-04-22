@@ -8,7 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="303c7c15-3c9e-422d-8919-c896f1db8157" name="Changes" comment="" />
+    <list default="true" id="303c7c15-3c9e-422d-8919-c896f1db8157" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftableDrive/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftableDrive/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.AssemblyInfoInputs.cache" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +21,12 @@
   <component name="DpaMonitoringSettings">
     <option name="firstShow" value="false" />
   </component>
+  <component name="Git.Settings">
+    <branch-grouping />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/softable/RiderProjects/SoftableDrive/.idea/.idea.SoftableDrive/.idea/dataSources/f4d7f459-6265-45c1-8ad9-8258d7b1713b/storage_v2/_src_/schema/main.uQUzAA.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///usr/local/share/dotnet/sdk/8.0.408/Sdks/Microsoft.NET.Sdk.Web/Sdk/Sdk.props" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///usr/local/share/dotnet/sdk/8.0.408/Sdks/Microsoft.NET.Sdk.Web/Sdk/Sdk.targets" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -29,19 +38,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.SoftableDrive: http.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/softable/RiderProjects/SoftableDrive&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.SoftableDrive: http.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/softable/RiderProjects/SoftableDrive",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "vcs.log",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.SoftableDrive: http">
     <configuration name="SoftableDrive: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/SoftableDrive/SoftableDrive.csproj" />
@@ -84,6 +96,8 @@
       <updated>1744745953030</updated>
       <workItem from="1744745954101" duration="4439000" />
       <workItem from="1744750447195" duration="8304000" />
+      <workItem from="1744808202961" duration="19245000" />
+      <workItem from="1744907372364" duration="3854000" />
     </task>
     <servers />
   </component>
@@ -91,6 +105,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
