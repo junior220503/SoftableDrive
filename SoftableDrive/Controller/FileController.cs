@@ -33,7 +33,7 @@ public class FileController : ControllerBase
         var uploadDir = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
         Directory.CreateDirectory(uploadDir);
             
-        var filePath = Path.Combine(uploadDir, file.Name);
+        var filePath = Path.Combine(uploadDir, file.Id.ToString());
         if (!System.IO.File.Exists(filePath))
             return NotFound("file not found.");
         var fileBytes = await System.IO.File.ReadAllBytesAsync(filePath);
@@ -51,11 +51,11 @@ public class FileController : ControllerBase
         var uploadDir = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
         Directory.CreateDirectory(uploadDir);
             
-        var filePath = Path.Combine(uploadDir, formFile.FileName);
+        var file = new FileModel(formFile.FileName, DateTimeOffset.UtcNow, formFile.Length);
+        var filePath = Path.Combine(uploadDir, file.Id.ToString());
         await using (var stream = new FileStream(filePath, FileMode.Create))
             await formFile.CopyToAsync(stream);
-            
-        var file = new FileModel(formFile.FileName, DateTimeOffset.UtcNow, formFile.Length);
+        
         await Context.AddAsync(file);
         await Context.SaveChangesAsync();
             
@@ -70,7 +70,7 @@ public class FileController : ControllerBase
             
         var uploadDir = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
         Directory.CreateDirectory(uploadDir);
-        var filePath = Path.Combine(uploadDir, file.Name);
+        var filePath = Path.Combine(uploadDir, file.Id.ToString());
         System.IO.File.Delete(filePath);
             
         Context.Files.Remove(file);
