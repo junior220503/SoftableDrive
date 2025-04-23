@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("ecfe494f-098f-407a-a2a5-59ecf58408ed")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("SoftableDrive")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9d0cef515cda415d3a22fece6de829dd7fafe2a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e961ff8e2fdd47f7fde8f5a11b752d554b14beee")]
 [assembly: System.Reflection.AssemblyProductAttribute("SoftableDrive")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SoftableDrive")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

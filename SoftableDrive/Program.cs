@@ -1,10 +1,12 @@
+using Microsoft.EntityFrameworkCore;
 using SoftableDrive.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<FileContext>();
+builder.Services.AddDbContext<FileContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddControllers();
 
 var app = builder.Build();

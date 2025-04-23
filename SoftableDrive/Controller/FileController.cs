@@ -55,7 +55,7 @@ public class FileController : ControllerBase
         await using (var stream = new FileStream(filePath, FileMode.Create))
             await formFile.CopyToAsync(stream);
             
-        var file = new FileModel(formFile.FileName, DateTime.Now, formFile.Length);
+        var file = new FileModel(formFile.FileName, DateTimeOffset.UtcNow, formFile.Length);
         await Context.AddAsync(file);
         await Context.SaveChangesAsync();
             
