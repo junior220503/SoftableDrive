@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v8.0": {
       "SoftableDrive/1.0.0": {
         "dependencies": {
+          "AWSSDK.Core": "3.7.402.44",
+          "AWSSDK.S3": "3.7.416.14",
           "Microsoft.AspNetCore.OpenApi": "8.0.15",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Design": "9.0.4",
@@ -17,6 +19,25 @@
         },
         "runtime": {
           "SoftableDrive.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.7.402.44": {
+        "runtime": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.402.44"
+          }
+        }
+      },
+      "AWSSDK.S3/3.7.416.14": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.402.44"
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.S3.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.416.14"
+          }
         }
       },
       "Humanizer.Core/2.14.1": {
@@ -901,6 +922,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AWSSDK.Core/3.7.402.44": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rI43KCr5NkHsLX9G08mSo0LC79JXIg6D6PHPZZvZni18BX9cKvfuf2qkEypMmeRbZRzZkDhq45QrmGiW4mUNhA==",
+      "path": "awssdk.core/3.7.402.44",
+      "hashPath": "awssdk.core.3.7.402.44.nupkg.sha512"
+    },
+    "AWSSDK.S3/3.7.416.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vHVjI5VQz4IDF3p/Sh8g0EVvRaUDLwcLVyo4iIkadGLpPRlfE5Rb7y8QN8Hy/8reRrQzQqLP5HC1AR6o9Z4iEQ==",
+      "path": "awssdk.s3/3.7.416.14",
+      "hashPath": "awssdk.s3.3.7.416.14.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",

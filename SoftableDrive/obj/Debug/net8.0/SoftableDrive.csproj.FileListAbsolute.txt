@@ -160,3 +160,5 @@
 /Users/softable/RiderProjects/SoftableDrive/SoftableDrive/obj/Debug/net8.0/SoftableDrive.sourcelink.json
 /Users/softable/RiderProjects/SoftableDrive/SoftableDrive/bin/Debug/net8.0/Npgsql.dll
 /Users/softable/RiderProjects/SoftableDrive/SoftableDrive/bin/Debug/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/Users/softable/RiderProjects/SoftableDrive/SoftableDrive/bin/Debug/net8.0/AWSSDK.Core.dll
+/Users/softable/RiderProjects/SoftableDrive/SoftableDrive/bin/Debug/net8.0/AWSSDK.S3.dll

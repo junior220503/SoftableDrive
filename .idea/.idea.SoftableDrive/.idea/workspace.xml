@@ -9,15 +9,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="303c7c15-3c9e-422d-8919-c896f1db8157" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftableDrive/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftableDrive/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftableDrive/.idea/dataSources/f4d7f459-6265-45c1-8ad9-8258d7b1713b.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftableDrive/.idea/dataSources/f4d7f459-6265-45c1-8ad9-8258d7b1713b/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftableDrive/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftableDrive/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftableDrive/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftableDrive/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftableDrive/Controller/FileController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftableDrive/Controller/FileController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftableDrive/Models/FileRequest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftableDrive/TempScaffold/File.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftableDrive/TempScaffold/PostgresContext.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftableDrive/bin/Debug/net8.0/SoftableDrive.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SoftableDrive/bin/Debug/net8.0/SoftableDrive.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftableDrive/bin/Debug/net8.0/SoftableDrive.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SoftableDrive/bin/Debug/net8.0/SoftableDrive.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/SoftableDrive.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/ref/SoftableDrive.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/ref/SoftableDrive.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/refint/SoftableDrive.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SoftableDrive/obj/Debug/net8.0/refint/SoftableDrive.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftableDrive/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/SoftableDrive/obj/rider.project.model.nuget.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,10 +48,10 @@
     <setting file="file:///usr/local/share/dotnet/sdk/8.0.408/Sdks/Microsoft.NET.Sdk.Web/Sdk/Sdk.props" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///usr/local/share/dotnet/sdk/8.0.408/Sdks/Microsoft.NET.Sdk.Web/Sdk/Sdk.targets" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -49,23 +61,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.SoftableDrive: http.executor": "Run",
-    "Docker.SoftableDrive/Dockerfile.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/softable/RiderProjects/SoftableDrive",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.log",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.SoftableDrive: http.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.SoftableDrive/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/softable/RiderProjects/SoftableDrive&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.log&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.SoftableDrive: http">
     <configuration name="SoftableDrive: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/SoftableDrive/SoftableDrive.csproj" />
@@ -140,6 +157,9 @@
       <workItem from="1744907372364" duration="3854000" />
       <workItem from="1745334243434" duration="10201000" />
       <workItem from="1745349291666" duration="6108000" />
+      <workItem from="1745412412872" duration="20635000" />
+      <workItem from="1745437125978" duration="1680000" />
+      <workItem from="1745506179606" duration="1258000" />
     </task>
     <servers />
   </component>
@@ -161,5 +181,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

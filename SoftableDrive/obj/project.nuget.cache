@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "lp5LtbTRA1c=",
+  "dgSpecHash": "M4Pv/c+ybOU=",
   "success": true,
   "projectFilePath": "/Users/softable/RiderProjects/SoftableDrive/SoftableDrive/SoftableDrive.csproj",
   "expectedPackageFiles": [
+    "/Users/softable/.nuget/packages/awssdk.core/3.7.402.44/awssdk.core.3.7.402.44.nupkg.sha512",
+    "/Users/softable/.nuget/packages/awssdk.s3/3.7.416.14/awssdk.s3.3.7.416.14.nupkg.sha512",
     "/Users/softable/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/softable/.nuget/packages/microsoft.aspnetcore.openapi/8.0.15/microsoft.aspnetcore.openapi.8.0.15.nupkg.sha512",
     "/Users/softable/.nuget/packages/microsoft.bcl.asyncinterfaces/7.0.0/microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

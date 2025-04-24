@@ -1,3 +1,5 @@
+using Amazon.S3;
+using Amazon.S3.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SoftableDrive.Data;
@@ -11,16 +13,18 @@ namespace SoftableDrive.Controller;
 public class FileController : ControllerBase
 {
     private readonly FileContext Context;
+    private readonly IAmazonS3 S3Client;
 
-    public FileController(FileContext context)
+    public FileController(FileContext context, IAmazonS3 s3Client)
     {
         Context = context;
+        S3Client = s3Client;
     }
     
     [HttpGet]
     public async Task<IActionResult> GetAllFiles()
     {
-        var files = await Context.Files.ToListAsync();
+        var files = await Context.Files.ToListAsync();  
         return Ok(files);
     }
 
@@ -29,15 +33,26 @@ public class FileController : ControllerBase
     {
         var file = await Context.Files.FirstOrDefaultAsync(f => f.Id == id);
         if (file == null) return NotFound();
+
+        try
+        {
+            var request = new GetObjectRequest
+            {
+                BucketName = "softabledrive",
+                Key = file.Id.ToString()
+            };
             
-        var uploadDir = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
-        Directory.CreateDirectory(uploadDir);
+            using var response = await S3Client.GetObjectAsync(request);
+            var stream = new MemoryStream();
+            await response.ResponseStream.CopyToAsync(stream);
+            stream.Seek(0, SeekOrigin.Begin);
             
-        var filePath = Path.Combine(uploadDir, file.Id.ToString());
-        if (!System.IO.File.Exists(filePath))
-            return NotFound("file not found.");
-        var fileBytes = await System.IO.File.ReadAllBytesAsync(filePath);
-        return File(fileBytes, "application/octet-stream", file.Name);
+            return File(stream, "application/octet-stream", file.Name);
+        }
+        catch (AmazonS3Exception e)
+        {
+            return NotFound();
+        }
     }
 
     [HttpPost]
@@ -47,19 +62,30 @@ public class FileController : ControllerBase
     {
         if (formFile.Length <= 0)
             return BadRequest("invalid file.");
+
+        try
+        {
+            var file = new FileModel(formFile.FileName, DateTime.UtcNow, formFile.Length);
+
+            var request = new PutObjectRequest
+            {
+                BucketName = "softabledrive",
+                Key = file.Id.ToString(),
+                InputStream = formFile.OpenReadStream(),
+                ContentType = "application/octet-stream"
+            };
             
-        var uploadDir = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
-        Directory.CreateDirectory(uploadDir);
+            await S3Client.PutObjectAsync(request);
             
-        var file = new FileModel(formFile.FileName, DateTimeOffset.UtcNow, formFile.Length);
-        var filePath = Path.Combine(uploadDir, file.Id.ToString());
-        await using (var stream = new FileStream(filePath, FileMode.Create))
-            await formFile.CopyToAsync(stream);
-        
-        await Context.AddAsync(file);
-        await Context.SaveChangesAsync();
+            await Context.AddAsync(file);
+            await Context.SaveChangesAsync();
             
-        return Ok(file);
+            return Ok();
+        }
+        catch (AmazonS3Exception e)
+        {
+            return StatusCode(500, $"Error uploading file: {e.Message}");
+        }
     }
 
     [HttpDelete("id")]
@@ -67,14 +93,24 @@ public class FileController : ControllerBase
     {
         var file = await Context.Files.FirstOrDefaultAsync(f => f.Id == id);
         if (file == null) return NotFound();
+
+        try
+        {
+            var request = new DeleteObjectRequest
+            {
+                BucketName = "softabledrive",
+                Key = file.Id.ToString()
+            };
+            await S3Client.DeleteObjectAsync(request);
             
-        var uploadDir = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
-        Directory.CreateDirectory(uploadDir);
-        var filePath = Path.Combine(uploadDir, file.Id.ToString());
-        System.IO.File.Delete(filePath);
+            Context.Files.Remove(file);
+            await Context.SaveChangesAsync();
             
-        Context.Files.Remove(file);
-        await Context.SaveChangesAsync();
-        return Ok(file);
+            return Ok();
+        }
+        catch (AmazonS3Exception e)
+        {
+            return StatusCode(500, $"Error deleting file: {e.Message}");
+        }
     }
 }
