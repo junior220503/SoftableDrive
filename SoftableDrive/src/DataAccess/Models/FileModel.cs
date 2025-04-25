@@ -1,17 +1,9 @@
 namespace SoftableDrive.DataAccess.Models;
 
-public class FileModel
+public class FileModel(string name, DateTimeOffset uploadTime, long size)
 {
-    public FileModel(string name, DateTimeOffset uploadTime, long size)
-    {
-        Id = Guid.NewGuid();
-        Name = name;
-        UploadTime = uploadTime;
-        Size = size;
-    }
-    
-    public Guid Id { get; init; }
-    public string Name { get; set; }
-    public DateTimeOffset UploadTime { get; set; }
-    public long Size { get; set; }
+    public Guid Id { get; init; } = Guid.NewGuid();
+    public string Name { get; set; } = name;
+    public DateTimeOffset UploadTime { get; set; } = uploadTime;
+    public long Size { get; set; } = size;
 }

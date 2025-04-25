@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SoftableDrive")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70e75cdc64f1891e302ecc769d7d8fd72f4aa79b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+113ce8720971de8c1ba3c6fd87a13a651bc7ec2f")]
 [assembly: System.Reflection.AssemblyProductAttribute("SoftableDrive")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SoftableDrive")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

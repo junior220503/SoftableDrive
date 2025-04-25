@@ -4,52 +4,42 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SoftableDrive.DataAccess.Models;
 using SoftableDrive.DataAccess.Persistence;
+using SoftableDrive.DataAccess.Repository;
 
 namespace SoftableDrive.Controllers;
 
 [ApiController]
 [Route("files")]
-
-public class FileController : ControllerBase
+public class FileController(IFileRepository repository, IAmazonS3 s3Client) : ControllerBase
 {
-    private readonly FileContext Context;
-    private readonly IAmazonS3 S3Client;
-
-    public FileController(FileContext context, IAmazonS3 s3Client)
-    {
-        Context = context;
-        S3Client = s3Client;
-    }
-    
     [HttpGet]
     public async Task<IActionResult> GetAllFiles()
     {
-        var files = await Context.Files.ToListAsync();  
+        var files = await repository.FindFiles();
         return Ok(files);
     }
 
     [HttpGet("id")]
     public async Task<IActionResult> GetFile(Guid id)
     {
-        var file = await Context.Files.FirstOrDefaultAsync(f => f.Id == id);
-        if (file == null) return NotFound();
+        var file = await repository.FindFile(id) ?? throw new FileNotFoundException();
 
         try
         {
             var request = new GetObjectRequest
             {
                 BucketName = "softabledrive",
-                Key = file.Id.ToString()
+                Key = file.Id.ToString(),
             };
-            
-            using var response = await S3Client.GetObjectAsync(request);
+
+            using var response = await s3Client.GetObjectAsync(request);
             var stream = new MemoryStream();
             await response.ResponseStream.CopyToAsync(stream);
             stream.Seek(0, SeekOrigin.Begin);
-            
+
             return File(stream, "application/octet-stream", file.Name);
         }
-        catch (AmazonS3Exception e)
+        catch (AmazonS3Exception)
         {
             return NotFound();
         }
@@ -72,14 +62,13 @@ public class FileController : ControllerBase
                 BucketName = "softabledrive",
                 Key = file.Id.ToString(),
                 InputStream = formFile.OpenReadStream(),
-                ContentType = "application/octet-stream"
+                ContentType = "application/octet-stream",
             };
-            
-            await S3Client.PutObjectAsync(request);
-            
-            await Context.AddAsync(file);
-            await Context.SaveChangesAsync();
-            
+
+            await s3Client.PutObjectAsync(request);
+
+            await repository.SaveFile(file);
+
             return Ok();
         }
         catch (AmazonS3Exception e)
@@ -91,21 +80,19 @@ public class FileController : ControllerBase
     [HttpDelete("id")]
     public async Task<IActionResult> DeleteFile(Guid id)
     {
-        var file = await Context.Files.FirstOrDefaultAsync(f => f.Id == id);
-        if (file == null) return NotFound();
+        var file = await repository.FindFile(id) ?? throw new FileNotFoundException();
 
         try
         {
             var request = new DeleteObjectRequest
             {
                 BucketName = "softabledrive",
-                Key = file.Id.ToString()
+                Key = id.ToString(),
             };
-            await S3Client.DeleteObjectAsync(request);
-            
-            Context.Files.Remove(file);
-            await Context.SaveChangesAsync();
-            
+            await s3Client.DeleteObjectAsync(request);
+
+            await repository.DeleteFile(id);
+
             return Ok();
         }
         catch (AmazonS3Exception e)
