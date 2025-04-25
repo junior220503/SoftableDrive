@@ -2,10 +2,10 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SoftableDrive.Data;
-using SoftableDrive.Models;
+using SoftableDrive.DataAccess.Models;
+using SoftableDrive.DataAccess.Persistence;
 
-namespace SoftableDrive.Controller;
+namespace SoftableDrive.Controllers;
 
 [ApiController]
 [Route("files")]

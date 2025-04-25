@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using SoftableDrive.Models;
+using SoftableDrive.DataAccess.Models;
 
-namespace SoftableDrive.Data;
+namespace SoftableDrive.DataAccess.Persistence;
 
 public class FileContext : DbContext
 {

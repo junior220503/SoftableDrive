@@ -1,8 +1,8 @@
-using Microsoft.EntityFrameworkCore;
-using SoftableDrive.Data;
-using Amazon.S3;
 using Amazon;
 using Amazon.Runtime;
+using Amazon.S3;
+using Microsoft.EntityFrameworkCore;
+using SoftableDrive.DataAccess.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -60,3 +60,7 @@ app.MapControllers();
 
 app.UseHttpsRedirection();
 app.Run();
+
+namespace SoftableDrive
+{
+}

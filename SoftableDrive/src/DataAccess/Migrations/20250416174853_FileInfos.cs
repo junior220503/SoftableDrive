@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿#nullable disable
 
-#nullable disable
+using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace SoftableDrive.Migrations
+namespace SoftableDrive.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class FileInfos : Migration

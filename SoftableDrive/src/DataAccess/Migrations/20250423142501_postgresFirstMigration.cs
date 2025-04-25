@@ -1,9 +1,8 @@
-﻿using System;
+﻿#nullable disable
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
-#nullable disable
-
-namespace SoftableDrive.Migrations
+namespace SoftableDrive.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class postgresFirstMigration : Migration

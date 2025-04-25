@@ -1,4 +1,4 @@
-namespace SoftableDrive.Models;
+namespace SoftableDrive.DataAccess.Models;
 
 public class FileModel
 {
