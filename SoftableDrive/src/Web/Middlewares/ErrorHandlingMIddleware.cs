@@ -16,18 +16,19 @@ public class ErrorHandlingMiddleware(RequestDelegate next, ILogger<ErrorHandling
                     StatusCode = (int)HttpStatusCode.InternalServerError,
                 }
             },
+            { typeof(FileNotFoundException), e => new NotFoundObjectResult(e.Message) },
         };
 
     public async Task InvokeAsync(HttpContext context)
     {
         try
         {
-            await next(context); //tenta realizar a operação
+            await next(context);
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, ex.Message); //loga o erro
-            await HandleExceptionAsync(context, ex); //chama o método que trata exceções
+            logger.LogError(ex, ex.Message);
+            await HandleExceptionAsync(context, ex);
         }
     }
 
@@ -35,7 +36,6 @@ public class ErrorHandlingMiddleware(RequestDelegate next, ILogger<ErrorHandling
     {
         if (context.Response.HasStarted)
         {
-            //não faz nada caso a response já esteja ocorrendo
             return;
         }
 
