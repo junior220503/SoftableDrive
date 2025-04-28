@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using SoftableDrive.DataAccess.Models;
-using SoftableDrive.DataAccess.Persistence;
+using SoftableDrive.Application.Files;
+using SoftableDrive.Domain.Models;
+using SoftableDrive.Infrastructure.Repositories.Configuration;
 
-namespace SoftableDrive.DataAccess.Repository;
+namespace SoftableDrive.Infrastructure.Repositories.Files;
 
 public class FileRepository(FileContext context) : IFileRepository
 {

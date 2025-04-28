@@ -2,7 +2,7 @@
 
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace SoftableDrive.DataAccess.Migrations
+namespace SoftableDrive.Infrastructure.Repositories.Configuration.Migrations
 {
     /// <inheritdoc />
     public partial class postgresFirstMigration : Migration
@@ -10,11 +10,13 @@ namespace SoftableDrive.DataAccess.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Sql(@"
+            migrationBuilder.Sql(
+                @"
             ALTER TABLE ""Files"" 
             ALTER COLUMN ""UploadTime"" TYPE timestamp with time zone 
             USING ""UploadTime""::timestamp with time zone;
-            ");
+            "
+            );
 
             migrationBuilder.AlterColumn<long>(
                 name: "Size",
@@ -22,7 +24,8 @@ namespace SoftableDrive.DataAccess.Migrations
                 type: "bigint",
                 nullable: false,
                 oldClrType: typeof(int),
-                oldType: "INTEGER");
+                oldType: "INTEGER"
+            );
 
             migrationBuilder.AlterColumn<string>(
                 name: "Name",
@@ -30,13 +33,16 @@ namespace SoftableDrive.DataAccess.Migrations
                 type: "text",
                 nullable: false,
                 oldClrType: typeof(string),
-                oldType: "TEXT");
+                oldType: "TEXT"
+            );
 
-            migrationBuilder.Sql(@"
+            migrationBuilder.Sql(
+                @"
             ALTER TABLE ""Files"" 
             ALTER COLUMN ""Id"" TYPE uuid 
             USING ""Id""::uuid;
-            ");
+            "
+            );
         }
 
         /// <inheritdoc />
@@ -48,7 +54,8 @@ namespace SoftableDrive.DataAccess.Migrations
                 type: "TEXT",
                 nullable: false,
                 oldClrType: typeof(DateTime),
-                oldType: "timestamp with time zone");
+                oldType: "timestamp with time zone"
+            );
 
             migrationBuilder.AlterColumn<int>(
                 name: "Size",
@@ -56,7 +63,8 @@ namespace SoftableDrive.DataAccess.Migrations
                 type: "INTEGER",
                 nullable: false,
                 oldClrType: typeof(long),
-                oldType: "bigint");
+                oldType: "bigint"
+            );
 
             migrationBuilder.AlterColumn<string>(
                 name: "Name",
@@ -64,7 +72,8 @@ namespace SoftableDrive.DataAccess.Migrations
                 type: "TEXT",
                 nullable: false,
                 oldClrType: typeof(string),
-                oldType: "text");
+                oldType: "text"
+            );
 
             migrationBuilder.AlterColumn<string>(
                 name: "Id",
@@ -72,7 +81,8 @@ namespace SoftableDrive.DataAccess.Migrations
                 type: "TEXT",
                 nullable: false,
                 oldClrType: typeof(Guid),
-                oldType: "uuid");
+                oldType: "uuid"
+            );
         }
     }
 }

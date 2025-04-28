@@ -2,9 +2,11 @@ using Amazon;
 using Amazon.Runtime;
 using Amazon.S3;
 using Microsoft.EntityFrameworkCore;
-using SoftableDrive.Controllers;
-using SoftableDrive.DataAccess.Persistence;
-using SoftableDrive.DataAccess.Repository;
+using SoftableDrive.Application.Files;
+using SoftableDrive.Infrastructure.Repositories.Configuration;
+using SoftableDrive.Infrastructure.Repositories.Files;
+using SoftableDrive.Web.Controllers;
+using SoftableDrive.Web.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 

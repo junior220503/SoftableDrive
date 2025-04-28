@@ -5,13 +5,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
-using SoftableDrive.DataAccess.Persistence;
 
-namespace SoftableDrive.DataAccess.Migrations
+namespace SoftableDrive.Infrastructure.Repositories.Configuration.Migrations
 {
     [DbContext(typeof(FileContext))]
-    [Migration("20250415213457_Initial")]
-    partial class Initial
+    [Migration("20250416174853_FileInfos")]
+    partial class FileInfos
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,8 +24,14 @@ namespace SoftableDrive.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("Name")
                         .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("UploadTime")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

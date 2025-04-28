@@ -1,7 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
-using SoftableDrive.DataAccess.Models;
+using SoftableDrive.Domain.Models;
 
-namespace SoftableDrive.DataAccess.Repository;
+namespace SoftableDrive.Application.Files;
 
 public interface IFileRepository
 {

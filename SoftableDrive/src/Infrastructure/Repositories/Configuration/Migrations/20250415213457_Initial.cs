@@ -2,7 +2,7 @@
 
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace SoftableDrive.DataAccess.Migrations
+namespace SoftableDrive.Infrastructure.Repositories.Configuration.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration
@@ -15,19 +15,19 @@ namespace SoftableDrive.DataAccess.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Nome = table.Column<string>(type: "TEXT", nullable: false)
+                    Nome = table.Column<string>(type: "TEXT", nullable: false),
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Files", x => x.Id);
-                });
+                }
+            );
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Files");
+            migrationBuilder.DropTable(name: "Files");
         }
     }
 }

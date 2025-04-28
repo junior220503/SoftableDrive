@@ -1,4 +1,4 @@
-namespace SoftableDrive.DataAccess.Models;
+namespace SoftableDrive.Domain.Models;
 
 public class FileModel(string name, DateTimeOffset uploadTime, long size)
 {

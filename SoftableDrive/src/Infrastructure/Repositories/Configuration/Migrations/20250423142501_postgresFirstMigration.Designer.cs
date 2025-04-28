@@ -5,9 +5,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
-using SoftableDrive.DataAccess.Persistence;
 
-namespace SoftableDrive.DataAccess.Migrations
+namespace SoftableDrive.Infrastructure.Repositories.Configuration.Migrations
 {
     [DbContext(typeof(FileContext))]
     [Migration("20250423142501_postgresFirstMigration")]
